@@ -4,6 +4,7 @@ public class Artikl {
      String naziv = new String ();
      String kod = new String ();
      int cijena;
+     static int brojArtikala=0;
 
     public Artikl () {}
     public Artikl (String ime, int cij, String sifra) { Postavi(ime,cij,sifra); }
@@ -11,7 +12,7 @@ public class Artikl {
         this.naziv=naziv;
         this.cijena=cijena;
         this.kod=kod;
-        //brojArtikala++;
+        brojArtikala++;
     }
 
     public String getNaziv () {

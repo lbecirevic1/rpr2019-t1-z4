@@ -7,11 +7,12 @@ public class Korpa {
     Artikl [] artikli = new Artikl[50];
 
     public boolean dodajArtikl (Artikl a) {
-            int i=0;
-            while (artikli[i]!=null)
-                i++;
-            //a.brojArtikala++;
-        artikli[i]=a;
+         //   int i=0;
+          //  while (artikli[i]!=null)
+           //     i++;
+            artikli[a.brojArtikala++]=a;
+           // a.brojArtikala++;
+       // artikli[i]=a;
         return true;
     }
     public Artikl izbaciArtiklSaKodom (String sifra) {
@@ -43,7 +44,7 @@ public class Korpa {
 
     public int dajUkupnuCijenuArtikala () {
             int ukupnaCijena=0;
-            for (int i=0; i<artikli.length-1; i=i+1) {
+            for (int i=0; i<artikli.length; i=i+1) {
                 if (artikli[i]!=null)
                 ukupnaCijena=ukupnaCijena+artikli[i].cijena;
             }

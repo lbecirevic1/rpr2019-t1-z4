@@ -7,20 +7,17 @@ public class Supermarket {
     Artikl [] artikli = new Artikl [1000];
 
     public boolean dodajArtikl (Artikl a) {
-        int i=0;
-        while (artikli[i]!=null)
-            i++;
-        //a.brojArtikala++;
-        artikli[i]=a;
+        artikli[a.brojArtikala++]=a;
+       // a.brojArtikala++;
         return true;
     }
     public Artikl izbaciArtiklSaKodom (String sifra) {
         Artikl izbaci = new Artikl ();
         Petlja1: for (int i=0; i<artikli.length; i=i+1) {
             int brojac=0;
-            if (sifra.equals(artikli[i].getKod()))
+            if (artikli[i]!=null && sifra.equals(artikli[i].getKod()))
                 izbaci=artikli[i];
-            if (!sifra.equals(artikli[i].getKod())) {
+            if (artikli[i]!=null && !sifra.equals(artikli[i].getKod())) {
                 Petlja2:   for (int j = i; j<artikli.length-1; j=j+1) {
                     if (artikli[j]!=null) {
                         Artikl temp = artikli[j];
