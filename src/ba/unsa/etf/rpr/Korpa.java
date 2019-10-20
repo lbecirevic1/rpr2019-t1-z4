@@ -15,29 +15,36 @@ public class Korpa {
         return true;
     }
     public Artikl izbaciArtiklSaKodom (String sifra) {
-        int istiKod=0;
         Artikl izbaci = new Artikl ();
-
-        int vel=artikli.length-1;
-        Artikl [] b = new Artikl [vel];
-
-        for (int i=0; i<artikli.length; i=i+1) {
-            int j=0;
+        Petlja1: for (int i=0; i<artikli.length; i=i+1) {
+            int brojac=0;
             if (sifra.equals(artikli[i].getKod()))
                 izbaci=artikli[i];
             if (!sifra.equals(artikli[i].getKod())) {
-                b[j]=artikli[i];
-                j++;
+         Petlja2:   for (int j = i; j<artikli.length-1; j=j+1) {
+                    if (artikli[j]!=null) {
+                        Artikl temp = artikli[j];
+                        artikli[j] = artikli[j + 1];
+                        artikli[j + 1] = temp;
+                    }
+                    if (artikli[j]==null) {
+                        brojac=1;
+                        break Petlja2;
+                    }
+                }
+                if (brojac==1)
+                    break Petlja1;
             }
         }
-        artikli=null;
-        Artikl [] artikli = Arrays.copyOf( b, b.length );
+       // artikli=null;
+       // Artikl [] artikli = Arrays.copyOf( b, b.length );
         return izbaci;
     }
 
     public int dajUkupnuCijenuArtikala () {
             int ukupnaCijena=0;
-            for (int i=0; i<artikli.length; i=i+1) {
+            for (int i=0; i<artikli.length-1; i=i+1) {
+                if (artikli[i]!=null)
                 ukupnaCijena=ukupnaCijena+artikli[i].cijena;
             }
             return ukupnaCijena;
