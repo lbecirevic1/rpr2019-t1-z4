@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static Korpa korpa = new Korpa();
-    private static Supermarket supermarket = new Supermarket();
+   private static Korpa korpa = new Korpa();
+   private static Supermarket supermarket = new Supermarket();
 
     private static void unosArtikalaUMarket(){
         supermarket.dodajArtikl(new Artikl("Biciklo", 1000, "1"));
