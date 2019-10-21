@@ -1,7 +1,5 @@
 package ba.unsa.etf.rpr;
 
-import java.util.Arrays;
-
 public class Supermarket {
 
     Artikl [] artikli = new Artikl [1000];

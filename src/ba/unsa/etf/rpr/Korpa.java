@@ -1,7 +1,5 @@
 package ba.unsa.etf.rpr;
 
-import java.util.Arrays;
-
 public class Korpa {
 
     Artikl [] artikli = new Artikl[50];
@@ -13,6 +11,7 @@ public class Korpa {
             artikli[i]=a;
         return true;
     }
+
     public Artikl izbaciArtiklSaKodom (String sifra) {
         Artikl izbaci = new Artikl();
         int i = 0;
